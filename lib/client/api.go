@@ -869,7 +869,7 @@ func (tc *TeleportClient) startPortForwarding(nodeClient *NodeClient) error {
 			if err != nil {
 				return trace.Wrap(err)
 			}
-			go nodeClient.listenForDynamicForward(socket)
+			go nodeClient.dynamicListenAndForward(socket)
 		}
 	}
 	return nil
